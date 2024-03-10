@@ -37,10 +37,11 @@ export const styles = StyleSheet.create({
 
   login: {
     fontSize: 32,
-    color: "#1B2F49"
+    color: "#1B2F49",
+    
   },
 
   EmailSenha: {
-    color: "#1B2F49"
+    color: "#808080"
   }
 });
