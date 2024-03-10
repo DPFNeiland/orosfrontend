@@ -38,10 +38,12 @@ export const styles = StyleSheet.create({
   login: {
     fontSize: 32,
     color: "#1B2F49",
-    
+    marginBottom: 30
   },
 
   EmailSenha: {
-    color: "#808080"
+    color: "#808080",
+    alignSelf: 'flex-start',
+    marginLeft: 50
   }
 });

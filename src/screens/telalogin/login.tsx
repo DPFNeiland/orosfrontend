@@ -29,6 +29,8 @@ const Login = () => {
           <TextInput
             onChangeText={setEmail}
             placeholder="example@gmail.com"
+            placeholderTextColor="#1B2F49"
+
           >
 
           </TextInput>
@@ -37,6 +39,7 @@ const Login = () => {
           <TextInput
             onChangeText={setSenha}
             placeholder="*****************"
+            placeholderTextColor="#1B2F49"
           >
 
           </TextInput>
