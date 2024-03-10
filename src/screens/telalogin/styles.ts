@@ -31,6 +31,16 @@ export const styles = StyleSheet.create({
     height: 320,
     backgroundColor: "white",
     alignItems: "center",
-    elevation: 2
+    elevation: 4,
+    borderRadius: 12
+  },
+
+  login: {
+    fontSize: 32,
+    color: "#1B2F49"
+  },
+
+  EmailSenha: {
+    color: "#1B2F49"
   }
 });

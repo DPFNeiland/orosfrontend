@@ -23,7 +23,7 @@ const Login = () => {
         <BemVindoAo />
         <Oros />
         <View style={styles.view}>
-          <Text>Login</Text>
+          <Text style={styles.login}>Login</Text>
 
           <Text>E-Mail</Text>
           <TextInput
