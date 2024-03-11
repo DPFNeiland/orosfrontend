@@ -27,25 +27,29 @@ const Login = () => {
 
           <Text style={styles.EmailSenha}>E-Mail</Text>
           <TextInput
+            style={styles.Input}
             onChangeText={setEmail}
             placeholder="example@gmail.com"
-            placeholderTextColor="#1B2F49"
-
+            placeholderTextColor="#808080"
+            textAlign="left"
           >
 
           </TextInput>
 
           <Text style={styles.EmailSenha}>Senha</Text>
           <TextInput
+            style={styles.Input}
             onChangeText={setSenha}
             placeholder="*****************"
-            placeholderTextColor="#1B2F49"
+            placeholderTextColor="#808080"
+
           >
 
           </TextInput>
 
-          <TouchableOpacity onPress={handleSignIn}>
-            <Text>Login</Text>
+          <TouchableOpacity onPress={handleSignIn} >
+            <Text style={styles.buttonLogin}
+            >Login</Text>
           </TouchableOpacity>
         </View>
       </View>
