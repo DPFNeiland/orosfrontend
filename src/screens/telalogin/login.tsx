@@ -4,6 +4,8 @@ import { styles } from "./Styles";
 import BemVindoAo from "./bemVindoAo";
 import Oros from "./oros";
 import Bombeiro from "./bombeiros";
+import Policia from "./policia";
+import Ambulancia from "./ambulancia";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
@@ -31,7 +33,7 @@ const Login = () => {
           <BemVindoAo />
           <Oros />
           <View style={styles.view}>
-            <Text style={styles.login}>Login</Text>
+            <Text style={styles.login}>LOGIN</Text>
 
             <Text style={styles.EmailSenha}>E-Mail</Text>
             <TextInput
@@ -64,9 +66,7 @@ const Login = () => {
             </View>
 
             <Pressable onPress={handleSignIn} style={styles.Button} >
-              <Text
-                style={styles.buttonLogin}
-              >Login</Text>
+              <Text style={styles.buttonLogin}>Login</Text>
             </Pressable>
 
 
@@ -75,9 +75,9 @@ const Login = () => {
 
 
           <View style={styles.NaoPossuiUmaContaAindaCadastrese}>
-            <Text style={styles.NaoPossuiUmaContaAinda}>Não possui uma conta ainda?</Text>
+            <Text style={styles.NaoPossuiUmaContaAinda}>Não possui uma conta ainda?  </Text>
             <Pressable>
-              <Text style={styles.Cadastrase}> Cadastre-se</Text>
+              <Text style={styles.Cadastrase}>Cadastre-se</Text>
             </Pressable>
           </View>
 
@@ -92,13 +92,13 @@ const Login = () => {
             </View>
             <View style={styles.EmergenciaContateBotoes}>
               <Pressable onPress={handleFlamengo}>
-                <Bombeiro></Bombeiro>
+                <Policia></Policia>
               </Pressable>
               <Text style={styles.BombeiroPoliciAmbulancia}>Polícia</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
               <Pressable onPress={handleFlamengo}>
-                <Bombeiro></Bombeiro>
+                <Ambulancia></Ambulancia>
               </Pressable>
               <Text style={styles.BombeiroPoliciAmbulancia}>Ambulância</Text>
             </View>

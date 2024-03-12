@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
 
   view: {
     width: "80%",
-    height: height * 0.45,
+    height: height * 0.44,
     backgroundColor: "white",
     alignItems: "center",
     elevation: 4,
@@ -52,6 +52,8 @@ export const styles = StyleSheet.create({
     marginTop: height * 0.04, 
     marginBottom: height * 0.02, 
     textDecorationLine: 'underline',
+    fontWeight: 'bold',
+
 
   },
 
@@ -120,14 +122,15 @@ export const styles = StyleSheet.create({
     color: "#142944",
     fontWeight: 'bold',
     fontStyle: 'italic',
-    marginTop: width * 0.02,
-    marginBottom: width * 0.03
+    marginTop: width * 0.07,
+    marginBottom: width * 0.04
     
   },
 
   ViewEmergence:{
     flexDirection: 'row',
-    alignContent: 'space-between'
+    justifyContent: 'space-evenly',
+    width: '100%'
   },
 
   EmergenciaContateBotoes: {
