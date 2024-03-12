@@ -53,6 +53,7 @@ export const styles = StyleSheet.create({
     marginBottom: height * 0.02, 
     textDecorationLine: 'underline',
     fontWeight: 'bold',
+    fontFamily: 'MBFSpace'
 
 
   },
@@ -63,6 +64,26 @@ export const styles = StyleSheet.create({
     marginLeft: width * 0.1, 
     marginTop: width * 0.03,
     fontSize: height * 0.02, 
+  },
+
+  GmailComImagem: {
+    flexDirection: 'row',
+    marginRight: '24%',
+    alignItems: 'center'
+  },
+
+  SenhaComImagem: {
+    width: "90%",
+    marginRight: '10%',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+
+  },
+
+  InputComCadeado: {
+    flexDirection: 'row',
+    marginLeft: '14%',
+    
   },
 
   buttonLogin: {
@@ -88,7 +109,7 @@ export const styles = StyleSheet.create({
 
   Input: {
     alignSelf: "flex-start",
-    marginLeft: width * 0.1,
+    marginLeft: width * 0.01
   },
 
   EsqueceuSuaSenha: {

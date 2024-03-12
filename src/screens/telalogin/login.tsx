@@ -6,6 +6,9 @@ import Oros from "./oros";
 import Bombeiro from "./bombeiros";
 import Policia from "./policia";
 import Ambulancia from "./ambulancia";
+import EyeCrossed from "./eyecrossed";
+import Gmail from "./gmail";
+import Cadeado from "./cadeado";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
@@ -36,27 +39,35 @@ const Login = () => {
             <Text style={styles.login}>LOGIN</Text>
 
             <Text style={styles.EmailSenha}>E-Mail</Text>
-            <TextInput
-              style={styles.Input}
-              onChangeText={setEmail}
-              placeholder="example@gmail.com"
-              placeholderTextColor="#808080"
-              textAlign="left"
-            >
+            <View style={styles.GmailComImagem}>
+              <Gmail></Gmail>
+              <TextInput
+                style={styles.Input}
+                onChangeText={setEmail}
+                placeholder="example@gmail.com"
+                placeholderTextColor="#808080"
+                textAlign="left"
+              >
 
-            </TextInput>
+              </TextInput>
+            </View>
 
             <Text style={styles.EmailSenha}>Senha</Text>
-            <TextInput
-              style={styles.Input}
-              onChangeText={setSenha}
-              placeholder="*****************"
-              placeholderTextColor="#808080"
+            <View style={styles.SenhaComImagem}>
+              <View style={styles.InputComCadeado}>
+                <Cadeado></Cadeado>
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={setSenha}
+                  placeholder="*****************"
+                  placeholderTextColor="#808080"
+                >
 
-            >
+                </TextInput>
+              </View>
+              <EyeCrossed></EyeCrossed>
 
-            </TextInput>
-
+            </View>
             <View>
 
               <Pressable>
@@ -105,7 +116,7 @@ const Login = () => {
           </View>
         </View>
       </SafeAreaView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 };
 
