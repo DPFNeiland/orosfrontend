@@ -111,7 +111,33 @@ export const styles = StyleSheet.create({
     fontSize: height * 0.015,
     marginTop: width * 0.02,
     color: "#0C4EA3",
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
 
+  },
+
+  EmergenciaContate: {
+    color: "#142944",
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    marginTop: width * 0.02,
+    marginBottom: width * 0.03
+    
+  },
+
+  ViewEmergence:{
+    flexDirection: 'row',
+    alignContent: 'space-between'
+  },
+
+  EmergenciaContateBotoes: {
+    alignItems: 'center',
+  },
+
+  BombeiroPoliciAmbulancia: {
+    color: "#142944",
+    fontWeight: 'bold',
+    fontStyle: 'italic',
   }
 
 });

@@ -1,8 +1,9 @@
 import React from "react";
-import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable } from "react-native";
+import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable, Image } from "react-native";
 import { styles } from "./Styles";
 import BemVindoAo from "./bemVindoAo";
 import Oros from "./oros";
+import Bombeiro from "./bombeiros";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
@@ -17,6 +18,10 @@ const Login = () => {
     }
 
     console.log(data)
+  }
+
+  function handleFlamengo() {
+    console.log("Flamengo")
   }
 
   return (
@@ -74,6 +79,29 @@ const Login = () => {
             <Pressable>
               <Text style={styles.Cadastrase}> Cadastre-se</Text>
             </Pressable>
+          </View>
+
+          <Text style={styles.EmergenciaContate}>Emergência? Contate:</Text>
+
+          <View style={styles.ViewEmergence}>
+            <View style={styles.EmergenciaContateBotoes}>
+              <Pressable onPress={handleFlamengo}>
+                <Bombeiro></Bombeiro>
+              </Pressable>
+              <Text style={styles.BombeiroPoliciAmbulancia}>Bombeiro</Text>
+            </View>
+            <View style={styles.EmergenciaContateBotoes}>
+              <Pressable onPress={handleFlamengo}>
+                <Bombeiro></Bombeiro>
+              </Pressable>
+              <Text style={styles.BombeiroPoliciAmbulancia}>Polícia</Text>
+            </View>
+            <View style={styles.EmergenciaContateBotoes}>
+              <Pressable onPress={handleFlamengo}>
+                <Bombeiro></Bombeiro>
+              </Pressable>
+              <Text style={styles.BombeiroPoliciAmbulancia}>Ambulância</Text>
+            </View>
           </View>
         </View>
       </SafeAreaView>
