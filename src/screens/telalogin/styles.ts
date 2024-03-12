@@ -1,7 +1,15 @@
-import { StyleSheet, View } from "react-native";  
+import { StyleSheet, Dimensions } from "react-native";
 import { useFonts } from 'expo-font';
 
+const { width, height } = Dimensions.get("window");
+
 export const styles = StyleSheet.create({
+
+
+  geral: {
+    flex: 1
+  },
+
   container: {
     flex: 1,
     justifyContent: "center",
@@ -23,46 +31,87 @@ export const styles = StyleSheet.create({
   bemVindoAoOros: {
     width: '100%',
     height: '45%',
-    alignItems: "center"
+    alignItems: "center",
+    position: "absolute",
+
   },
 
   view: {
     width: "80%",
-    height: 320,
+    height: height * 0.45,
     backgroundColor: "white",
     alignItems: "center",
     elevation: 4,
-    borderRadius: 12
+    borderRadius: 12,
+
   },
 
   login: {
-    fontSize: 32,
+    fontSize: width * 0.07, 
     color: "#1B2F49",
-    marginTop: 30,
-    marginBottom: 30
+    marginTop: height * 0.04, 
+    marginBottom: height * 0.02, 
+    textDecorationLine: 'underline',
+
   },
 
   EmailSenha: {
     color: "#808080",
     alignSelf: 'flex-start',
-    marginLeft: 50,
-    fontSize: 20
+    marginLeft: width * 0.1, 
+    marginTop: width * 0.03,
+    fontSize: height * 0.02, 
   },
 
   buttonLogin: {
     backgroundColor: "#003470",
     color: "white",
-    width: 138,
-    height: 45,
+    width: 135,
+    height: 35,
     borderRadius: 20,
     elevation: 12,
-    fontSize: 16,
-    alignSelf: "center"
+    fontSize: 20,
+    textAlign: "center",
+    marginTop: "5%",
+    fontWeight: 'bold',
+
+  },
+
+  Button: {
+    alignItems: 'center',
+    textAlign: "center",
+    justifyContent: 'center',
+
   },
 
   Input: {
     alignSelf: "flex-start",
-    marginLeft: 50
+    marginLeft: width * 0.1,
+  },
+
+  EsqueceuSuaSenha: {
+    color: "#BA0808",
+    textDecorationLine: 'underline',
+    marginTop: width * 0.02,
+    justifyContent: 'flex-end'
+  },
+
+  NaoPossuiUmaContaAindaCadastrese: {
+    flexDirection: 'row',
+  },
+
+  NaoPossuiUmaContaAinda: {
+    fontSize: height * 0.015,
+    marginTop: width * 0.02,
+    color: "#808080",
+
+  },
+
+  Cadastrase: {
+    fontSize: height * 0.015,
+    marginTop: width * 0.02,
+    color: "#0C4EA3",
+
   }
 
 });
