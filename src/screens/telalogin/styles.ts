@@ -47,23 +47,22 @@ export const styles = StyleSheet.create({
   },
 
   login: {
-    fontSize: width * 0.07, 
+    fontSize: width * 0.07,
     color: "#1B2F49",
-    marginTop: height * 0.04, 
-    marginBottom: height * 0.02, 
+    marginTop: height * 0.04,
+    marginBottom: height * 0.02,
     textDecorationLine: 'underline',
-    fontWeight: 'bold',
-    fontFamily: 'MBFSpace'
-
+    fontFamily: 'MBFSpace',
+    // fontWeight: 'bold'
 
   },
 
   EmailSenha: {
     color: "#808080",
     alignSelf: 'flex-start',
-    marginLeft: width * 0.1, 
+    marginLeft: width * 0.1,
     marginTop: width * 0.03,
-    fontSize: height * 0.02, 
+    fontSize: height * 0.02,
   },
 
   GmailComImagem: {
@@ -83,7 +82,7 @@ export const styles = StyleSheet.create({
   InputComCadeado: {
     flexDirection: 'row',
     marginLeft: '14%',
-    
+
   },
 
   buttonLogin: {
@@ -145,10 +144,10 @@ export const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginTop: width * 0.07,
     marginBottom: width * 0.04
-    
+
   },
 
-  ViewEmergence:{
+  ViewEmergence: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     width: '100%'

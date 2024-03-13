@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable, Image } from "react-native";
 import { styles } from "./Styles";
 import BemVindoAo from "./bemVindoAo";
@@ -9,12 +9,24 @@ import Ambulancia from "./ambulancia";
 import EyeCrossed from "./eyecrossed";
 import Gmail from "./gmail";
 import Cadeado from "./cadeado";
+import useLoadFonts from "./useLoadFonts";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
   const [senha, setSenha] = React.useState("");
-  const [lembreDeMim, setLembreDeMim] = React.useState(false);
-
+  const [isLoading, setIsLoading] = useState(true)
+  const fontsLoaded = useLoadFonts() // Invoke the function here
+    
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+  
+  if (!fontsLoaded || isLoading) {
+    return console.log("Vasco")
+  }
 
   function handleSignIn() {
     const data = {
