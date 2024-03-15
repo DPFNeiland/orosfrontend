@@ -67,8 +67,9 @@ export const styles = StyleSheet.create({
 
   GmailComImagem: {
     flexDirection: 'row',
-    marginRight: '24%',
-    alignItems: 'center'
+    marginRight: '-2%',
+    alignItems: 'center',
+    width:"80%"
   },
 
   SenhaComImagem: {
@@ -108,10 +109,12 @@ export const styles = StyleSheet.create({
 
   Input: {
     alignSelf: "flex-start",
-    marginLeft: width * 0.01
+    marginLeft: width * 0.01,
+    width: "80%"
   },
 
   EsqueceuSuaSenha: {
+    marginLeft: "50%",
     color: "#BA0808",
     textDecorationLine: 'underline',
     marginTop: width * 0.02,
@@ -161,6 +164,11 @@ export const styles = StyleSheet.create({
     color: "#142944",
     fontWeight: 'bold',
     fontStyle: 'italic',
+  },
+
+  errorText: {
+    color: '#BA0808',
+    fontSize: 14
   }
 
 });

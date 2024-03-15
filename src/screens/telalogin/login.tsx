@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable } from "react-native";
+import { useForm, Controller } from "react-hook-form";
 import { styles } from "./Styles";
 import BemVindoAo from "./bemVindoAo";
 import Oros from "./oros";
@@ -12,8 +13,7 @@ import Cadeado from "./cadeado";
 import useLoadFonts from "./useLoadFonts";
 
 export default function Login() {
-  const [senha, setSenha] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const { control, handleSubmit, formState: { errors } } = useForm();
   const [isLoading, setIsLoading] = useState(true);
   const fontsLoaded = useLoadFonts(); // Invoke the function here
 
@@ -24,22 +24,17 @@ export default function Login() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!fontsLoaded || isLoading) {
-    return console.log("Vasco");
-  }
+  const handleSignIn = (data: any) => {
+    // Handle sign in logic here using the form data
+    console.log(data);
+  };
 
-
-
-
-  function handleSignIn() {
-  }
-
-
-
-
-
-  function handleFlamengo() {
+  const handleFlamengo = () => {
     console.log("Flamengo");
+  };
+
+  if (!fontsLoaded || isLoading) {
+    return <Text>Loading...</Text>;
   }
 
   return (
@@ -53,52 +48,73 @@ export default function Login() {
 
             <Text style={styles.EmailSenha}>E-Mail</Text>
             <View style={styles.GmailComImagem}>
-              <Gmail></Gmail>
+              <Gmail />
+              <Controller
+                control={control}
+                render={({ field }) => (
                   <TextInput
                     style={styles.Input}
-                    onChangeText={setEmail}
+                    onChangeText={(value) => field.onChange(value)}
+                    value={field.value}
                     placeholder="example@gmail.com"
                     placeholderTextColor="#808080"
-                    textAlign="left" />
-      
-
+                    textAlign="left"
+                    keyboardType="email-address"
+                  />
+                )}
+                name="email"
+                rules={{ 
+                  required: 'Email is required', 
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Digite um email válido"
+                  }
+                }}
+              />
             </View>
+            {errors.email && <Text style={styles.errorText}>Digite um email válido</Text>}
 
             <Text style={styles.EmailSenha}>Senha</Text>
             <View style={styles.SenhaComImagem}>
               <View style={styles.InputComCadeado}>
-                <Cadeado></Cadeado>
-                <TextInput
-                  style={styles.Input}
-                  onChangeText={setSenha}
-                  placeholder="*****************"
-                  placeholderTextColor="#808080"
-                >
-
-                </TextInput>
+                <Cadeado />
+                <Controller
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      style={styles.Input}
+                      onChangeText={(value) => field.onChange(value)}
+                      value={field.value}
+                      placeholder="*****************"
+                      placeholderTextColor="#808080"
+                      secureTextEntry
+                    />
+                  )}
+                  name="senha"
+                  rules={{ 
+                    required: 'Digite uma senha válida', 
+                    minLength: { value: 8, message: 'Senha de 8 dígitos' }
+                  }}
+                />
               </View>
-              <EyeCrossed></EyeCrossed>
-
+              <EyeCrossed />
             </View>
-            <View>
+            {errors.senha && <Text style={styles.errorText}>Senha de 8 dígitos</Text>}
 
+            <View>
               <Pressable>
                 <Text style={styles.EsqueceuSuaSenha}>Esqueceu sua senha?</Text>
               </Pressable>
-
             </View>
 
-            <TouchableOpacity onPress={handleSignIn} style={styles.Button}>
+            <TouchableOpacity onPress={handleSubmit(handleSignIn)} style={styles.Button}>
               <Text style={styles.buttonLogin}>Login</Text>
             </TouchableOpacity>
 
-
-
           </View>
 
-
           <View style={styles.NaoPossuiUmaContaAindaCadastrese}>
-            <Text style={styles.NaoPossuiUmaContaAinda}>Não possui uma conta ainda?  </Text>
+            <Text style={styles.NaoPossuiUmaContaAinda}>Não possui uma conta ainda? </Text>
             <Pressable>
               <Text style={styles.Cadastrase}>Cadastre-se</Text>
             </Pressable>
@@ -109,19 +125,19 @@ export default function Login() {
           <View style={styles.ViewEmergence}>
             <View style={styles.EmergenciaContateBotoes}>
               <TouchableOpacity onPress={handleFlamengo}>
-                <Bombeiro></Bombeiro>
+                <Bombeiro />
               </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Bombeiro</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
               <TouchableOpacity onPress={handleFlamengo}>
-                <Policia></Policia>
+                <Policia />
               </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Polícia</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
               <TouchableOpacity onPress={handleFlamengo}>
-                <Ambulancia></Ambulancia>
+                <Ambulancia />
               </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Ambulância</Text>
             </View>
@@ -131,5 +147,3 @@ export default function Login() {
     </SafeAreaView>
   );
 }
-
-
