@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable, Image } from "react-native";
+import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable } from "react-native";
 import { styles } from "./Styles";
 import BemVindoAo from "./bemVindoAo";
 import Oros from "./oros";
@@ -11,34 +11,35 @@ import Gmail from "./gmail";
 import Cadeado from "./cadeado";
 import useLoadFonts from "./useLoadFonts";
 
-const Login = () => {
-  const [email, setEmail] = React.useState("");
+export default function Login() {
   const [senha, setSenha] = React.useState("");
-  const [isLoading, setIsLoading] = useState(true)
-  const fontsLoaded = useLoadFonts() // Invoke the function here
-    
+  const [email, setEmail] = React.useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const fontsLoaded = useLoadFonts(); // Invoke the function here
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [])
-  
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   if (!fontsLoaded || isLoading) {
-    return console.log("Vasco")
+    return console.log("Vasco");
   }
+
+
+
 
   function handleSignIn() {
-    const data = {
-      email,
-      senha,
-    }
-
-    console.log(data)
   }
 
+
+
+
+
   function handleFlamengo() {
-    console.log("Flamengo")
+    console.log("Flamengo");
   }
 
   return (
@@ -53,15 +54,14 @@ const Login = () => {
             <Text style={styles.EmailSenha}>E-Mail</Text>
             <View style={styles.GmailComImagem}>
               <Gmail></Gmail>
-              <TextInput
-                style={styles.Input}
-                onChangeText={setEmail}
-                placeholder="example@gmail.com"
-                placeholderTextColor="#808080"
-                textAlign="left"
-              >
+                  <TextInput
+                    style={styles.Input}
+                    onChangeText={setEmail}
+                    placeholder="example@gmail.com"
+                    placeholderTextColor="#808080"
+                    textAlign="left" />
+      
 
-              </TextInput>
             </View>
 
             <Text style={styles.EmailSenha}>Senha</Text>
@@ -88,9 +88,9 @@ const Login = () => {
 
             </View>
 
-            <Pressable onPress={handleSignIn} style={styles.Button} >
+            <TouchableOpacity onPress={handleSignIn} style={styles.Button}>
               <Text style={styles.buttonLogin}>Login</Text>
-            </Pressable>
+            </TouchableOpacity>
 
 
 
@@ -108,28 +108,28 @@ const Login = () => {
 
           <View style={styles.ViewEmergence}>
             <View style={styles.EmergenciaContateBotoes}>
-              <Pressable onPress={handleFlamengo}>
+              <TouchableOpacity onPress={handleFlamengo}>
                 <Bombeiro></Bombeiro>
-              </Pressable>
+              </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Bombeiro</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
-              <Pressable onPress={handleFlamengo}>
+              <TouchableOpacity onPress={handleFlamengo}>
                 <Policia></Policia>
-              </Pressable>
+              </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Polícia</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
-              <Pressable onPress={handleFlamengo}>
+              <TouchableOpacity onPress={handleFlamengo}>
                 <Ambulancia></Ambulancia>
-              </Pressable>
+              </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Ambulância</Text>
             </View>
           </View>
         </View>
       </SafeAreaView>
-    </SafeAreaView >
+    </SafeAreaView>
   );
-};
+}
 
-export default Login;
+

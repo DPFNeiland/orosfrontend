@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
-import * as Font from 'expo-font'
+import { useFonts } from 'expo-font';
 
 const useLoadFonts = () => {
-    const [fontsLoaded, setfontsLoaded] = useState(false)
-
-    const loadFonts = async () => {
-        await Font.loadAsync({
-            'MBFSpace': require('../../../assets/fonts/MBFSpace.ttf')
-        })
-        setfontsLoaded(true)
+    const [fontsLoaded] = useFonts({
+      'MBFSpace': require('../../../assets/fonts/MBFSpace.ttf'),
+    });
+    
+    if (!fontsLoaded) {
+      return false;
     }
-    useEffect(() => {
-        loadFonts()
-    }, [])
-
-    return fontsLoaded
+    
+    return true;
 }
 
-export default useLoadFonts
+export default useLoadFonts;
