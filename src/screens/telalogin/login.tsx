@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from "react";
 import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { styles } from "./Styles";
-import BemVindoAo from "./bemVindoAo";
-import Oros from "./oros";
-import Bombeiro from "./bombeiros";
-import Policia from "./policia";
-import Ambulancia from "./ambulancia";
-import EyeCrossed from "./eyecrossed";
-import Gmail from "./gmail";
-import Cadeado from "./cadeado";
-import useLoadFonts from "./useLoadFonts";
+import BemVindoAo from "../../components/bemVindoAo";
+import Oros from "../../components/oros";
+import Bombeiro from "../../components/bombeiros";
+import Policia from "../../components/policia";
+import Ambulancia from "../../components/ambulancia";
+import EyeCrossed from "../../components/eyecrossed";
+import Gmail from "../../components/gmail";
+import Cadeado from "../../components/cadeado";
 
-export default function Login() {
+export default function Login({ navigation }: any) {
   const { control, handleSubmit, formState: { errors } } = useForm();
-  const [isLoading, setIsLoading] = useState(true);
-  const fontsLoaded = useLoadFonts(); // Invoke the function here
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSignIn = (data: any) => {
     // Handle sign in logic here using the form data
@@ -33,9 +22,7 @@ export default function Login() {
     console.log("Flamengo");
   };
 
-  if (!fontsLoaded || isLoading) {
-    return <Text>Loading...</Text>;
-  }
+
 
   return (
     <SafeAreaView style={styles.geral}>
@@ -115,7 +102,8 @@ export default function Login() {
 
           <View style={styles.NaoPossuiUmaContaAindaCadastrese}>
             <Text style={styles.NaoPossuiUmaContaAinda}>Não possui uma conta ainda? </Text>
-            <Pressable>
+            <Pressable
+            onPress={ () => navigation.navigate('Cadastro')}>
               <Text style={styles.Cadastrase}>Cadastre-se</Text>
             </Pressable>
           </View>

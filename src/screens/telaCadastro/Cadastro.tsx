@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable, ScrollView } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Pressable, ScrollView } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { styles } from "./Styles";
-import BemVindoAo from "./bemVindoAo";
-import Oros from "./oros";
-import EyeCrossed from "./eyecrossed";
-import Gmail from "./gmail";
-import Cadeado from "./cadeado";
-import useLoadFonts from "./useLoadFonts";
-import Nomecomplet from "./nomeCompleto";
-import Naturalidade from "./Naturalidade";
-import Cpf from "./Cpf";
-import EstadoCivil from "./EstadoCivil";
-import Nascimento from "./Nascimento";
+import BemVindoAo from "../../components/bemVindoAo";
+import Oros from "../../components/oros";
+import EyeCrossed from "../../components/eyecrossed";
+import Gmail from "../../components/gmail";
+import Cadeado from "../../components/cadeado";
+import Nomecomplet from "../../components/nomeCompleto";
+import Naturalidade from "../../components/Naturalidade";
+import Cpf from "../../components/Cpf";
+import EstadoCivil from "../../components/EstadoCivil";
+import Nascimento from "../../components/Nascimento";
 
 type Formdata ={
   nome: string,
@@ -26,15 +25,7 @@ type Formdata ={
 
 export default function Cadastro() {
   const { control, handleSubmit, formState: { errors }, watch } = useForm();
-  const [isLoading, setIsLoading] = useState(true);
-  const fontsLoaded = useLoadFonts(); // Invoke the function here
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleSignIn = (data: any) => {
     console.log(data);
@@ -49,9 +40,6 @@ export default function Cadastro() {
     console.log("Flamengo");
   };
 
-  if (!fontsLoaded || isLoading) {
-    return <Text>Loading...</Text>;
-  }
 
   return (
     <View style={{ flex: 1, }}>
