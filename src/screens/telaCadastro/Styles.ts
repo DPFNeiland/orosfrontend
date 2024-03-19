@@ -11,15 +11,15 @@ export const styles = StyleSheet.create({
   },
 
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     left: 0,
     right: 0,
     top: 0,
+    width: "100%",
     height: 360,
-    backgroundColor: '#142944',
+    backgroundColor: 'red',
   },
 
 
@@ -37,11 +37,13 @@ export const styles = StyleSheet.create({
   },
 
   view: {
+    marginTop: '-25%',
+    marginLeft: "10%",
     width: "80%",
-    height: height,
+    height: height  * 1.02,
     backgroundColor: "white",
     alignItems: "center",
-    elevation: 4,
+    elevation: 13,
     borderRadius: 12,
 
   },
@@ -92,7 +94,7 @@ export const styles = StyleSheet.create({
     width: 135,
     height: 35,
     borderRadius: 20,
-    elevation: 12,
+    elevation: 2,
     fontSize: 20,
     textAlign: "center",
     marginTop: "5%",
@@ -122,7 +124,11 @@ export const styles = StyleSheet.create({
   },
 
   NaoPossuiUmaContaAindaCadastrese: {
+    alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'row',
+    marginTop: '5%',
+    marginBottom: '10%'
   },
 
   NaoPossuiUmaContaAinda: {
@@ -135,7 +141,7 @@ export const styles = StyleSheet.create({
   Cadastrase: {
     fontSize: height * 0.015,
     marginTop: width * 0.02,
-    color: "#0C4EA3",
+    color: "#00D455",
     textDecorationLine: 'underline',
     fontWeight: 'bold',
 
@@ -173,9 +179,9 @@ export const styles = StyleSheet.create({
 
   scrollView: {
 
-      backgroundColor: "white",
-      elevation: 4,
-      borderRadius: 12,
+      backgroundColor: "gray",
+      width: "100%",
+      height: "100%",
  
   },
 
