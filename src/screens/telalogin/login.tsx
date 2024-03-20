@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable } from "react-native";
+import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Pressable, Linking } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { styles } from "./Styles";
 import BemVindoAo from "../../components/bemVindoAo";
@@ -22,7 +22,17 @@ export default function Login({ navigation }: any) {
     console.log("Flamengo");
   };
 
+  const handleFireman = () =>{
+    Linking.openURL('tel:193');
+ }
+ 
+ const handlePolice = () =>{
+  Linking.openURL('tel:190');
+}
 
+const handleSAMU = () =>{
+  Linking.openURL('tel:192');
+}
 
   return (
     <SafeAreaView style={styles.geral}>
@@ -112,22 +122,22 @@ export default function Login({ navigation }: any) {
 
           <View style={styles.ViewEmergence}>
             <View style={styles.EmergenciaContateBotoes}>
-              <TouchableOpacity onPress={handleFlamengo}>
+              <TouchableOpacity onPress={handleFireman}>
                 <Bombeiro />
               </TouchableOpacity>
               <Text style={styles.BombeiroPoliciAmbulancia}>Bombeiro</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
-              <TouchableOpacity onPress={handleFlamengo}>
+              <TouchableOpacity onPress={handlePolice}>
                 <Policia />
               </TouchableOpacity>
-              <Text style={styles.BombeiroPoliciAmbulancia}>Polícia</Text>
+              <Text style={styles.BombeiroPoliciAmbulancia}>Polícia Militar</Text>
             </View>
             <View style={styles.EmergenciaContateBotoes}>
-              <TouchableOpacity onPress={handleFlamengo}>
+              <TouchableOpacity onPress={handleSAMU}>
                 <Ambulancia />
               </TouchableOpacity>
-              <Text style={styles.BombeiroPoliciAmbulancia}>Ambulância</Text>
+              <Text style={styles.BombeiroPoliciAmbulancia}>Samu</Text>
             </View>
           </View>
         </View>

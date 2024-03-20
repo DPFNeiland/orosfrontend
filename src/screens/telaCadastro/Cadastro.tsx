@@ -23,7 +23,7 @@ type Formdata ={
   senha: string,
 }
 
-export default function Cadastro() {
+export default function Cadastro({navigation}: any) {
   const { control, handleSubmit, formState: { errors }, watch } = useForm();
 
 
@@ -256,7 +256,7 @@ export default function Cadastro() {
 
         <View style={styles.NaoPossuiUmaContaAindaCadastrese}>
           <Text style={styles.NaoPossuiUmaContaAinda}>Já possui uma conta? </Text>
-          <Pressable>
+          <Pressable onPress={ () => navigation.navigate('Login')}>
             <Text style={styles.Cadastrase}> Faça o Login</Text>
           </Pressable>
         </View>
