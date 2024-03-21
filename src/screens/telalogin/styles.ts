@@ -57,6 +57,7 @@ export const styles = StyleSheet.create({
   },
 
   EmailSenha: {
+    fontFamily: 'GothamLight',
     color: "#808080",
     alignSelf: 'flex-start',
     marginLeft: width * 0.1,
@@ -66,7 +67,7 @@ export const styles = StyleSheet.create({
 
   GmailComImagem: {
     flexDirection: 'row',
-    marginRight: '-2%',
+    marginRight: '-4%',
     alignItems: 'center',
     width:"80%"
   },
@@ -109,15 +110,18 @@ export const styles = StyleSheet.create({
   Input: {
     alignSelf: "flex-start",
     marginLeft: width * 0.01,
-    width: "80%"
+    width: "80%",
+    fontFamily: 'GothamLight',
   },
 
   EsqueceuSuaSenha: {
-    marginLeft: "50%",
+    marginLeft: "40%",
     color: "#BA0808",
     textDecorationLine: 'underline',
     marginTop: width * 0.02,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    fontFamily: 'GothamLight',
+
   },
 
   NaoPossuiUmaContaAindaCadastrese: {
@@ -128,6 +132,7 @@ export const styles = StyleSheet.create({
     fontSize: height * 0.015,
     marginTop: width * 0.02,
     color: "#808080",
+    fontFamily: 'GothamLight',
 
   },
 
@@ -137,6 +142,7 @@ export const styles = StyleSheet.create({
     color: "#0C4EA3",
     textDecorationLine: 'underline',
     fontWeight: 'bold',
+    
 
   },
 
@@ -167,7 +173,9 @@ export const styles = StyleSheet.create({
 
   errorText: {
     color: '#BA0808',
-    fontSize: 14
+    fontSize: 14,
+    fontFamily: 'GothamLight',
+
   }
 
 });

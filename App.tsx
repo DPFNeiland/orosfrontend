@@ -13,6 +13,7 @@ const Stack = createNativeStackNavigator()
 export default function App(){
   const [fontsLoaded] = useFonts({
     'MBFSpace': require('./assets/fonts/MBFSpace.ttf'),
+    'GothamLight': require('./assets/fonts/Gotham/GothamLight.ttf')
 
   });
   const [isLoading, setIsLoading] = useState(true);

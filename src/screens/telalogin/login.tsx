@@ -14,7 +14,6 @@ export default function Login({ navigation }: any) {
   const { control, handleSubmit, formState: { errors } } = useForm();
 
   const handleSignIn = (data: any) => {
-    // Handle sign in logic here using the form data
     console.log(data);
   };
 
